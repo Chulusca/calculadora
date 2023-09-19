@@ -1,4 +1,6 @@
 let displayNum = "0";
+let memoria = "";
+
 
 function insertarEnDisplay(value){
     const operadores = ['+', '-', '*', '/', ','];
@@ -14,13 +16,16 @@ function insertarEnDisplay(value){
     }
     actualizarDisplay();
 }
+
 function actualizarDisplay(){
     document.getElementById("display").innerText = displayNum;
 }
+
 function clearD(){
     displayNum = "0";
     actualizarDisplay();
 }
+
 function calcular(){
     try{
         displayNum = eval(displayNum).toString();
@@ -32,6 +37,29 @@ function calcular(){
     }
 }
 
+function delDisplay(){
+    if(displayNum != "0"){
+        displayNum = displayNum.slice(0, -1);
+    }  
+    if(displayNum == ""){
+        displayNum = "0";
+    }
+    actualizarDisplay();
+}
+
+function cargarMemoria(){
+    const bool = (displayNum.includes("*") || displayNum.includes("/") ||displayNum.includes("+") ||displayNum.includes("-"))
+    if(bool){
+        calcular()
+        memoria = displayNum;
+    }
+    else{
+        memoria = displayNum;
+    }
+}
+function mostrarMemoria(){
+
+}
 
 function toggleTheme() {
     const body = document.body;

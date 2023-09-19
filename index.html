@@ -15,24 +15,25 @@
     <div class="calculator">
         <div class="display" id="display">0</div>
         <button class="button" onclick="clearD()">AC</button>
-        <button class="button"></button>
-        <button class="button"></button>
-        <button class="button" onclick="insertarEnDisplay('/')">/</button>
+        <button class="button" onclick="cargarMemoria()">M+</button>
+        <button class="button" onclick="insertarEnDisplay(memoria)">M</button>
+        <button class="button" onclick="delDisplay()">Del</button>
         <button class="button" onclick="insertarEnDisplay('7')">7</button>
         <button class="button" onclick="insertarEnDisplay('8')">8</button>
         <button class="button" onclick="insertarEnDisplay('9')">9</button>
-        <button class="button" onclick="insertarEnDisplay('*')" >X</button>
+        <button class="button" onclick="insertarEnDisplay('/')">/</button>
         <button class="button" onclick="insertarEnDisplay('4')">4</button>
         <button class="button" onclick="insertarEnDisplay('5')">5</button>
         <button class="button" onclick="insertarEnDisplay('6')">6</button>
-        <button class="button" onclick="insertarEnDisplay('-')">-</button>
+        <button class="button" onclick="insertarEnDisplay('*')" >X</button>
         <button class="button" onclick="insertarEnDisplay('1')">1</button>
         <button class="button" onclick="insertarEnDisplay('2')">2</button>
         <button class="button" onclick="insertarEnDisplay('3')">3</button>
-        <button class="button" onclick="insertarEnDisplay('+')">+</button>
-        <button class="button-double" onclick="insertarEnDisplay('0')">0</button>
+        <button class="button" onclick="insertarEnDisplay('-')">-</button>
+        <button class="button" onclick="insertarEnDisplay('0')">0</button>
         <button class="button" onclick="insertarEnDisplay(',')">,</button>
         <button class="button" onclick="calcular()">=</button>
+        <button class="button" onclick="insertarEnDisplay('+')">+</button>
     </div>
     <div class="conteiner"> 
         <button class="tema" onclick="toggleTheme()">Cambiar Tema</button>
