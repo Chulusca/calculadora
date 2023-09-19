@@ -3,7 +3,7 @@ let memoria = "";
 
 
 function insertarEnDisplay(value){
-    const operadores = ['+', '-', '*', '/', ','];
+    const operadores = ['+', '-', '*', '/', '.'];
     var ultChar = displayNum.slice(-1)
     if(operadores.includes(ultChar) && operadores.includes(value)){
         return;
@@ -38,10 +38,10 @@ function calcular(){
 }
 
 function delDisplay(){
-    if(displayNum != "0"){
+    if(displayNum != "0" && displayNum != "Infinity"  && displayNum != "Error" ){
         displayNum = displayNum.slice(0, -1);
     }  
-    if(displayNum == ""){
+    if(displayNum == "" || displayNum == "Infinity"|| displayNum == "Error"){
         displayNum = "0";
     }
     actualizarDisplay();
@@ -57,10 +57,6 @@ function cargarMemoria(){
         memoria = displayNum;
     }
 }
-function mostrarMemoria(){
-
-}
-
 function toggleTheme() {
     const body = document.body;
     body.classList.toggle('dark-theme');
