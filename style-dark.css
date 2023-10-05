@@ -40,9 +40,6 @@ body{
     overflow: hidden;
     max-height: 48px;
 }
-.display:hover{
-    background-color: rgb(76, 86, 97);
-}
 button{
     border-radius: 10px;
     outline:none;
