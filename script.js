@@ -1,6 +1,6 @@
 let displayNum = "0";
 let memoria = "";
-
+const caracteresHabilitados = ['+', '-', '*', '/', '.', '0', '1', '2', '3', '4', '5', '6' , '7', '8', '9']
 
 function insertarEnDisplay(value){
     const operadores = ['+', '-', '*', '/', '.'];
@@ -41,7 +41,7 @@ function delDisplay(){
     if(displayNum != "0" && displayNum != "Infinity"  && displayNum != "Error" ){
         displayNum = displayNum.slice(0, -1);
     }  
-    if(displayNum == "" || displayNum == "Infinity"|| displayNum == "Error"){
+    if(displayNum == "" || displayNum == "Infinity"|| displayNum == "Error" || displayNum == "-Infinity"){
         displayNum = "0";
     }
     actualizarDisplay();
@@ -73,3 +73,24 @@ function toggleTheme() {
         themeLink.setAttribute('href', lightTheme);
     }
 }
+
+window.addEventListener("keyup", (e) =>{ 
+    console.log(e.key)
+    if (caracteresHabilitados.includes(e.key)){
+        insertarEnDisplay(e.key);
+    }
+    switch (e.key){
+        case 'Backspace':
+            delDisplay();
+            break;
+
+        case 'Enter':
+            calcular();
+            break;
+
+        case 'Escape':
+            clearD();
+            break;
+    }
+});
+
