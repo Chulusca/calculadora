@@ -5,7 +5,7 @@ const caracteresHabilitados = ['+', '-', '*', '/', '.', '0', '1', '2', '3', '4',
 function insertarEnDisplay(value){
     const operadores = ['+', '-', '*', '/', '.'];
     var ultChar = displayNum.slice(-1)
-    if(operadores.includes(ultChar) && operadores.includes(value)){
+    if(operadores.includes(ultChar) && operadores.includes(value) || value == ''){
         return;
     }
     else if(displayNum === "0" || displayNum === "Error"){
